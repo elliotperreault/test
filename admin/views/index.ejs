@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kingbot administrator panel</title>
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <h1 class="title">KingBot Admin Panel</h1>
+    <div class="container">
+      <div>
+        <h1>banned words</h1>
+        <p>Add a comma and a space between each word to add several at once</p>
+        <form action="/bannedWord/add" method="post">
+          <br />
+          <input
+            type="text"
+            placeholder="Type the word"
+            name="word"
+            id="word"
+          />
+          <input type="submit" value="SUBMIT" />
+        </form>
+        <br />
+        <div class="list">
+          <% bannedWords.forEach(function(word) { %>
+          <div class="item">
+            <h2><%= word %></h2>
+            <div>
+              <img
+                src="https://www.pngall.com/wp-content/uploads/4/Settings-PNG0.png"
+                width="25px"
+                height="25px"
+                alt=""
+              />
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png"
+                width="25px"
+                height="25px"
+                alt=""
+                class="bannedWordTrash"
+                data-word="<%= word %>"
+              />
+            </div>
+          </div>
+          <hr />
+          <% }); %>
+        </div>
+      </div>
+      <div>
+        <h1>Char wizard</h1>
+        <p>
+          The Char wizard prevent user to use an emoji or other character as
+          text
+        </p>
+        <form action="/charWizard/add" method="post">
+          <br />
+          <input
+            name="key"
+            id="key"
+            type="text"
+            placeholder="This char"
+            style="width: 49%"
+          />
+          <input
+            name="value"
+            id="value"
+            type="text"
+            placeholder="will become this char"
+            style="width: 49%"
+          />
+          <input type="submit" value="SUBMIT" />
+        </form>
+        <br />
+        <div class="list">
+          <% for (const key in charWizard) { %>
+          <div class="item">
+            <h2><%= key %> -> <%= charWizard[key] %></h2>
+            <div>
+              <img
+                src="https://www.pngall.com/wp-content/uploads/4/Settings-PNG0.png"
+                width="25px"
+                height="25px"
+                alt=""
+              />
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png"
+                width="25px"
+                height="25px"
+                alt=""
+                class="charWizardTrash"
+                data-word="<%= key %>"
+              />
+            </div>
+          </div>
+          <hr />
+          <% } %>
+        </div>
+      </div>
+
+      <div style="opacity: 25%">
+        <h1>Offence record</h1>
+        <p>The offence record will keep all present and past infraction</p>
+        <br />
+
+        <div class="list" style="height: 10%">
+          <div class="item">
+            <h4>ID</h4>
+            <hr />
+            <h4>USERNAME</h4>
+            <hr />
+            <h4>MESSAGE</h4>
+            <hr />
+            <h4>DATE</h4>
+          </div>
+        </div>
+        <br />
+        <div class="list" style="height: 60%">
+          <div class="item">
+            <h4>01</h4>
+            <hr />
+            <h4>Elliot</h4>
+            <hr />
+            <h4>ping</h4>
+            <hr />
+            <h4>2024/05/12</h4>
+          </div>
+          <div class="item">
+            <h4>32</h4>
+            <hr />
+            <h4>Malik</h4>
+            <hr />
+            <h4>pong</h4>
+            <hr />
+            <h4>2024/03/12</h4>
+          </div>
+          <div class="item">
+            <h4>01</h4>
+            <hr />
+            <h4>Elliot</h4>
+            <hr />
+            <h4>ping</h4>
+            <hr />
+            <h4>2024/05/12</h4>
+          </div>
+          <div class="item">
+            <h4>32</h4>
+            <hr />
+            <h4>Malik</h4>
+            <hr />
+            <h4>pong</h4>
+            <hr />
+            <h4>2024/03/12</h4>
+          </div>
+          <div class="item">
+            <h4>01</h4>
+            <hr />
+            <h4>Elliot</h4>
+            <hr />
+            <h4>ping</h4>
+            <hr />
+            <h4>2024/05/12</h4>
+          </div>
+          <div class="item">
+            <h4>32</h4>
+            <hr />
+            <h4>Malik</h4>
+            <hr />
+            <h4>pong</h4>
+            <hr />
+            <h4>2024/03/12</h4>
+          </div>
+          <div class="item">
+            <h4>01</h4>
+            <hr />
+            <h4>Elliot</h4>
+            <hr />
+            <h4>ping</h4>
+            <hr />
+            <h4>2024/05/12</h4>
+          </div>
+          <div class="item">
+            <h4>32</h4>
+            <hr />
+            <h4>Malik</h4>
+            <hr />
+            <h4>pong</h4>
+            <hr />
+            <h4>2024/03/12</h4>
+          </div>
+          <div class="item">
+            <h4>01</h4>
+            <hr />
+            <h4>Elliot</h4>
+            <hr />
+            <h4>ping</h4>
+            <hr />
+            <h4>2024/05/12</h4>
+          </div>
+          <div class="item">
+            <h4>32</h4>
+            <hr />
+            <h4>Malik</h4>
+            <hr />
+            <h4>pong</h4>
+            <hr />
+            <h4>2024/03/12</h4>
+          </div>
+          <div class="item">
+            <h4>01</h4>
+            <hr />
+            <h4>Elliot</h4>
+            <hr />
+            <h4>ping</h4>
+            <hr />
+            <h4>2024/05/12</h4>
+          </div>
+          <div class="item">
+            <h4>32</h4>
+            <hr />
+            <h4>Malik</h4>
+            <hr />
+            <h4>pong</h4>
+            <hr />
+            <h4>2024/03/12</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <%- include('partials/footer') %>
+  <script src="scripts/index.js"></script>
+</html>

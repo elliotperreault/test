@@ -1,0 +1,53 @@
+<!-- views/partials/footer.ejs -->
+<footer>
+  <div class="credentialContainer" id="credentialContainer">
+    <p class="footer-text">
+      Made by
+      <a class="footer-link" target="_blank">Perreault Lab</a>
+    </p>
+  </div>
+</footer>
+<style>
+  .credentialContainer {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    transition: all 250ms;
+  }
+  .credentialContainer:hover {
+    padding-bottom: 15px;
+  }
+
+  .footer-text {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+  }
+
+  .footer-link {
+    color: #007bff; /* Change to your desired link color */
+    text-decoration: none;
+  }
+
+  .footer-link:hover {
+    text-decoration: underline;
+  }
+
+  footer {
+    background-color: #f8f9fa; /* Light background for footer */
+  }
+</style>
+
+<script>
+  document
+    .getElementById("credentialContainer")
+    .addEventListener("click", () => {
+      window.open("https://github.com/Perreault-Labs");
+    });
+</script>
